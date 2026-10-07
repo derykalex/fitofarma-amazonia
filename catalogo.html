@@ -102,7 +102,7 @@
             list.forEach(p => {
                 grid.innerHTML += `
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-emerald-100 flex flex-col">
-                        <div class="h-48 bg-gray-200 relative"><img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80'"></div>
+                        <div class="h-48 bg-gray-200 relative"><img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover" onerror="this.src='imagens/copaiba.jpg'"></div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-bold text-emerald-900">${p.nome}</h3>
@@ -139,7 +139,7 @@
                 reader.onload = (ev) => { plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: ev.target.result }); renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset(); };
                 reader.readAsDataURL(fileInput.files[0]);
             } else {
-                plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80' });
+                plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: 'imagens/copaiba.jpg' });
                 renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset();
             }
         }
