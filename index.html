@@ -1,99 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitofarma Amazônia - Início</title>
+    <title>Fitofarma Amazónia - Início</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-emerald-50 text-gray-800 font-sans min-h-screen flex flex-col">
-    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+<body class="bg-slate-50 text-gray-800 font-sans min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white">
+    <!-- Cabeçalho / Navegação -->
+    <header class="bg-emerald-900/95 backdrop-blur-md text-white shadow-lg sticky top-0 z-50 border-b border-emerald-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <i class="fa-solid fa-leaf text-3xl text-emerald-300"></i>
-                <span class="text-2xl font-bold tracking-wide">Fitofarma Amazônia</span>
+                <div class="w-10 h-10 rounded-xl bg-emerald-700 flex items-center justify-center shadow-inner">
+                    <i class="fa-solid fa-leaf text-2xl text-emerald-300"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-emerald-200 to-white bg-clip-text text-transparent">Fitofarma Amazónia</span>
             </div>
-            <nav class="flex space-x-6 font-medium">
-                <a href="index.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Início</a>
-                <a href="catalogo.html" class="hover:text-emerald-300 transition">Catálogo & App</a>
-                <a href="relatorio.html" class="hover:text-emerald-300 transition">Relatório do Projeto</a>
-                <a href="contato.html" class="hover:text-emerald-300 transition">Contato</a>
+            <nav class="flex space-x-8 font-medium text-sm md:text-base">
+                <a href="index.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1 transition">Início</a>
+                <a href="catalogo.html" class="text-emerald-100/80 hover:text-emerald-300 transition">Catálogo & App</a>
+                <a href="relatorio.html" class="text-emerald-100/80 hover:text-emerald-300 transition">Relatório do Projeto</a>
+                <a href="contato.html" class="text-emerald-100/80 hover:text-emerald-300 transition">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 py-12">
-        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-emerald-100 mb-12 relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 opacity-10 text-emerald-900 pointer-events-none">
-                <i class="fa-solid fa-seedling text-9xl"></i>
-            </div>
-            <div class="max-w-3xl mx-auto text-center relative z-10">
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Biodiversidade & Tecnologia</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-900 mt-4 mb-6">Guia Digital Interativo de Plantas Medicinais</h1>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Unindo o saber tradicional das comunidades amazônicas de Paragominas e região com pesquisas científicas avançadas, rastreabilidade e valorização da flora local.
-                </p>
-                <div class="flex justify-center gap-4 flex-wrap">
-                    <a href="catalogo.html" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-xl shadow-lg transition flex items-center gap-2">
-                        <i class="fa-solid fa-book-open"></i> Acessar Catálogo & App
-                    </a>
-                    <a href="relatorio.html" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold px-8 py-3 rounded-xl shadow transition flex items-center gap-2">
-                        <i class="fa-solid fa-file-lines"></i> Relatório & Mapa
-                    </a>
-                </div>
+    <!-- Secção Hero com Imagem de Fundo -->
+    <section class="relative bg-emerald-950 text-white py-24 md:py-32 overflow-hidden flex items-center justify-center">
+        <!-- Imagem de Fundo com Overlay -->
+        <div class="absolute inset-0 z-0 opacity-30 mix-blend-overlay">
+            <img src="imagens/hero-bg.jpg" alt="Floresta Amazónica" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/60 to-transparent z-0"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6 backdrop-blur-md">
+                <i class="fa-solid fa-sparkles"></i> Biodiversidade & Tecnologia
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+                Guia Digital Interativo de <span class="text-emerald-400">Plantas Medicinais</span>
+            </h1>
+            <p class="text-lg md:text-xl text-emerald-100/90 mb-10 leading-relaxed font-light max-w-2xl mx-auto">
+                Unindo o saber tradicional das comunidades amazónicas de Paragominas com pesquisas científicas avançadas e rastreabilidade segura.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="catalogo.html" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-900/50 transition transform hover:-translate-y-0.5 flex items-center gap-3">
+                    <i class="fa-solid fa-book-open"></i> Aceder ao Catálogo
+                </a>
+                <a href="relatorio.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-8 py-4 rounded-2xl backdrop-blur-md transition transform hover:-translate-y-0.5 flex items-center gap-3">
+                    <i class="fa-solid fa-file-lines"></i> Ver Relatório
+                </a>
             </div>
         </div>
+    </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-emerald-100 text-center">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3 class="font-bold text-emerald-900 text-lg mb-2">Proteção Contra Biopirataria</h3>
-                <p class="text-sm text-gray-600">Registro seguro de saberes tradicionais e certificação de origem justa.</p>
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full space-y-20">
+        
+        <!-- Cartões de Destaque / Pilares -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 transition transform hover:-translate-y-1">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-emerald-950 text-xl mb-3">Proteção Contra Biopirataria</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">Registo seguro de saberes tradicionais e certificação transparente de origem justa para as comunidades.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-emerald-100 text-center">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-microphone"></i></div>
-                <h3 class="font-bold text-emerald-900 text-lg mb-2">Tecnologia Acessível</h3>
-                <p class="text-sm text-gray-600">Cadastro de novas espécies por reconhecimento de voz e envio direto de fotos.</p>
+
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 transition transform hover:-translate-y-1">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <h3 class="font-bold text-emerald-950 text-xl mb-3">Tecnologia Acessível</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">Inovação com suporte a reconhecimento de voz e envio direto de fotografias para catálogos interativos.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-emerald-100 text-center">
-                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-handshake"></i></div>
-                <h3 class="font-bold text-emerald-900 text-lg mb-2">Cadeia Sustentável</h3>
-                <p class="text-sm text-gray-600">Conexão direta entre produtores locais e o mercado fitoterápico.</p>
+
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 transition transform hover:-translate-y-1">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="font-bold text-emerald-950 text-xl mb-3">Cadeia Sustentável</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">Fomento à bioeconomia através da ligação direta entre produtores locais e o mercado fitoterápico.</p>
             </div>
         </section>
 
-        <section class="bg-emerald-900 text-white rounded-2xl p-8 shadow-xl">
-            <h2 class="text-2xl font-bold text-center mb-8 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-users text-emerald-300"></i> Equipe do Projeto
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
-                <div class="bg-emerald-800/60 p-4 rounded-xl border border-emerald-700">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">G</div>
-                    <h3 class="font-semibold text-emerald-200">Gustavo</h3>
+        <!-- Secção da Equipa -->
+        <section class="bg-gradient-to-br from-emerald-900 to-emerald-950 text-white rounded-3xl p-10 md:p-14 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-12 -bottom-12 opacity-5 text-white pointer-events-none">
+                <i class="fa-solid fa-users text-[16rem]"></i>
+            </div>
+            
+            <div class="relative z-10 text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-users text-emerald-400"></i> Equipa do Projeto
+                </h2>
+                <p class="text-emerald-200/80 text-sm md:text-base">Estudantes e investigadores comprometidos com a inovação tecnológica e valorização da biodiversidade amazónica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center relative z-10">
+                <div class="bg-emerald-800/40 hover:bg-emerald-800/70 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50 transition transform hover:-scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg">G</div>
+                    <h3 class="font-bold text-white text-lg">Gustavo</h3>
                 </div>
-                <div class="bg-emerald-800/60 p-4 rounded-xl border border-emerald-700">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">Al</div>
-                    <h3 class="font-semibold text-emerald-200">Alex</h3>
+                <div class="bg-emerald-800/40 hover:bg-emerald-800/70 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50 transition transform hover:-scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg">Al</div>
+                    <h3 class="font-bold text-white text-lg">Alex</h3>
                 </div>
-                <div class="bg-emerald-800/60 p-4 rounded-xl border border-emerald-700">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">At</div>
-                    <h3 class="font-semibold text-emerald-200">Atyla</h3>
+                <div class="bg-emerald-800/40 hover:bg-emerald-800/70 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50 transition transform hover:-scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg">At</div>
+                    <h3 class="font-bold text-white text-lg">Atyla</h3>
                 </div>
-                <div class="bg-emerald-800/60 p-4 rounded-xl border border-emerald-700">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">C</div>
-                    <h3 class="font-semibold text-emerald-200">Carol</h3>
+                <div class="bg-emerald-800/40 hover:bg-emerald-800/70 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50 transition transform hover:-scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg">C</div>
+                    <h3 class="font-bold text-white text-lg">Carol</h3>
                 </div>
-                <div class="bg-emerald-800/60 p-4 rounded-xl border border-emerald-700">
-                    <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">K</div>
-                    <h3 class="font-semibold text-emerald-200">Kaynã</h3>
+                <div class="bg-emerald-800/40 hover:bg-emerald-800/70 backdrop-blur-md p-6 rounded-2xl border border-emerald-700/50 transition transform hover:-scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg">K</div>
+                    <h3 class="font-bold text-white text-lg">Kaynã</h3>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm">
-        <p>&copy; 2026 Fitofarma Amazônia. Todos os direitos reservados.</p>
+    <!-- Rodapé -->
+    <footer class="bg-emerald-950 text-emerald-400/80 py-8 text-center text-sm border-t border-emerald-900 mt-20">
+        <p>&copy; 2026 Fitofarma Amazónia. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
