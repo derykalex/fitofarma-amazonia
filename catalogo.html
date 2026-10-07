@@ -26,8 +26,8 @@
     <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
         <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
             <div>
-                <h1 class="text-3xl font-extrabold text-emerald-900">Catálogo de Plantas Medicinais</h1>
-                <p class="text-gray-600">Pesquise espécies nativas ou cadastre novas com suporte a fotos e ditado por voz.</p>
+                <h1 class="text-3xl font-extrabold text-emerald-900">Catálogo Avançado de Plantas Medicinais</h1>
+                <p class="text-gray-600">Espécies nativas da biodiversidade amazônica catalogadas com suporte a voz e upload de fotos.</p>
             </div>
             <button onclick="toggleModal(true)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl shadow transition flex items-center gap-2">
                 <i class="fa-solid fa-plus"></i> Cadastrar Nova Planta
@@ -85,11 +85,14 @@
 
     <script>
         let plants = [
-            { id: 1, nome: "Copaíba", cientifico: "Copaifera langsdorffii", uso: "Óleo cicatrizante e anti-inflamatório utilizado tradicionalmente.", ciencia: "Compostos diterpênicos comprovam ação anti-inflamatória e cicatrizante.", foto: "imagens/copaiba.jpg" },
-            { id: 2, nome: "Andiroba", cientifico: "Carapa guianensis", uso: "Uso tópico do óleo para alívio de dores musculares e repelente.", ciencia: "Presença de andirobina com propriedades analgésicas e antissépticas.", foto: "imagens/andiroba.jpg" },
-            { id: 3, nome: "Unha-de-Gato", cientifico: "Uncaria tomentosa", uso: "Infusão da casca para fortalecimento do sistema imunológico e inflamações.", ciencia: "Alcalóides oxindólicos auxiliam na modulação imune.", foto: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" },
-            { id: 4, nome: "Açaí", cientifico: "Euterpe oleracea", uso: "Consumo do fruto energético e uso de raízes contra febre.", ciencia: "Rico em antocianinas e potentes antioxidantes naturais.", foto: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" },
-            { id: 5, nome: "Jaborandi", cientifico: "Pilocarpus pennatifolius", uso: "Folhas usadas em infusões para tônicos capilares tradicionais.", ciencia: "Contém pilocarpina, princípio ativo usado no tratamento do glaucoma.", foto: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80" }
+            { id: 1, nome: "Copaíba", cientifico: "Copaifera langsdorffii", uso: "Óleo resina cicatrizante e anti-inflamatória aplicada em feridas e inflamações.", ciencia: "Presença marcante de beta-cariofileno com forte ação anti-inflamatória.", foto: "imagens/copaiba.jpg" },
+            { id: 2, nome: "Andiroba", cientifico: "Carapa guianensis", uso: "Uso tópico do óleo para alívio de dores articulares e ação repelente.", ciencia: "Rico em limonóides e andirobina com propriedades analgésicas.", foto: "imagens/andiroba.jpg" },
+            { id: 3, nome: "Unha-de-Gato", cientifico: "Uncaria tomentosa", uso: "Infusão da casca para combate a processos inflamatórios crônicos e imunidade.", ciencia: "Alcalóides oxindólicos auxiliam na modulação do sistema imunológico.", foto: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" },
+            { id: 4, nome: "Açaí", cientifico: "Euterpe oleracea", uso: "Fruto de alto valor energético e uso de raízes em infusões medicinais.", ciencia: "Elevada concentração de antocianinas, poderosos antioxidantes celulares.", foto: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" },
+            { id: 5, nome: "Jaborandi", cientifico: "Pilocarpus pennatifolius", uso: "Extrato de folhas tradicionalmente usado como tônico capilar.", ciencia: "Contém pilocarpina, alcalóide fundamental na oftalmologia e dermatologia.", foto: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80" },
+            { id: 6, nome: "Uxi-Amarelo", cientifico: "Endopleura uchi", uso: "Casca utilizada em chás para saúde uterina e tratamento de miomas.", ciencia: "Presença de bergenina com atividades anti-inflamatórias uterinas comprovadas.", foto: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" },
+            { id: 7, nome: "Cumaru", cientifico: "Dipteryx odorata", uso: "Sementes aromáticas usadas em banhos de cheiro e calmante natural.", ciencia: "Presença de cumarina com propriedades antiespasmódicas e aromaterápicas.", foto: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" },
+            { id: 8, nome: "Guaraná", cientifico: "Paullinia cupana", uso: "Sementes trituradas usadas como estimulante físico e mental ancestral.", ciencia: "Teor rico em cafeína, teobromina e taninos revitalizantes.", foto: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" }
         ];
 
         function renderPlants(list) {
