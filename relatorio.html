@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitofarma Amazônia - Relatório do Projeto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-emerald-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-emerald-800 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <i class="fa-solid fa-leaf text-3xl text-emerald-300"></i>
+                <span class="text-2xl font-bold tracking-wide">Fitofarma Amazônia</span>
+            </div>
+            <nav class="flex space-x-6 font-medium">
+                <a href="index.html" class="hover:text-emerald-300 transition">Início</a>
+                <a href="catalogo.html" class="hover:text-emerald-300 transition">Catálogo & App</a>
+                <a href="relatorio.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Relatório do Projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-emerald-100 mb-8">
+            <div class="flex justify-between items-center border-b pb-6 mb-8 flex-wrap gap-4">
+                <div>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Documentação Oficial</span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-900 mt-2">Relatório de Desenvolvimento e Pesquisa</h1>
+                </div>
+                <button onclick="window.print()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-xl shadow-sm transition flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-print"></i> Imprimir Relatório
+                </button>
+            </div>
+
+            <!-- Seção 1 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-bullseye text-emerald-600"></i> 1. Sumário Executivo e Objetivos
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    O projeto <strong>Fitofarma Amazônia</strong> tem como missão principal criar um guia digital interativo focado na catalogação de plantas medicinais da biodiversidade local[cite: 1], unindo o saber tradicional das comunidades com pesquisas científicas e farmacêuticas[cite: 1].
+                </p>
+            </section>
+
+            <!-- Seção 2: Problemas Econômicos e Impacto Estratégico -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-emerald-600"></i> 2. Problemas Econômicos e Soluções Sistêmicas
+                </h2>
+                <p class="text-gray-700 mb-6">Para além da vertente tecnológica e científica, a plataforma endereça os principais gargalos econômicos da bioeconomia local:</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-emerald-600"></i> A. Valorização e Escassez do Saber Tradicional vs. Biopirataria
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-2"><strong>O Problema:</strong> Comunidades tradicionais e indígenas guardam o conhecimento ancestral sobre as propriedades medicinais das plantas, mas muitas vezes não são remuneradas ou protegidas quando esse conhecimento é utilizado por grandes indústrias farmacêuticas e cosméticas (risco de biopirataria).</p>
+                        <p class="text-sm text-emerald-800 font-medium"><strong>Conexão com o Sistema:</strong> O Fitofarma pode integrar um módulo de rastreabilidade ou certificação de origem, garantindo que o valor gerado pelas pesquisas ou produtos derivados retorne de forma justa para as comunidades locais que preservam o conhecimento.</p>
+                    </div>
+
+                    <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-truck-ramp-box text-emerald-600"></i> B. Cadeia de Suprimentos Ineficiente para Insumos da Biodiversidade
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-2"><strong>O Problema:</strong> Pequenos produtores, extrativistas e cooperativas locais enfrentam dificuldades de escoamento, falta de padronização e ausência de conexões diretas com laboratórios, farmácias de manipulação ou o mercado de fitoterápicos.</p>
+                        <p class="text-sm text-emerald-800 font-medium"><strong>Conexão com o Sistema:</strong> O aplicativo pode atuar como um marketplace B2B ou um elo de conexão direta entre os coletores locais de plantas medicinais e o mercado farmacêutico, reduzindo intermediários e aumentando a renda local (cadeia curta de valor).</p>
+                    </div>
+
+                    <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-file-shield text-emerald-600"></i> C. Falta de Certificação e Transparência na Cadeia de Plantas Medicinais
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-2"><strong>O Problema:</strong> O mercado global de fitoterápicos e produtos naturais exige altos padrões de qualidade, sustentabilidade e manejo correto, mas faltam ferramentas digitais acessíveis na região para certificar a sustentabilidade e a extração legal dessas matérias-primas.</p>
+                        <p class="text-sm text-emerald-800 font-medium"><strong>Conexão com o Sistema:</strong> O guia digital pode incluir dados de manejo sustentável e inventário georreferenciado, permitindo que empresas verifiquem se a matéria-prima é de origem sustentável, agregando valor econômico aos produtos da bioeconomia regional.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Divisão de Tarefas (Equipe) -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-user-gear text-emerald-600"></i> 3. Divisão de Atividades e Responsabilidades da Equipe
+                </h2>
+                <p class="text-gray-700 mb-6">Atribuições distribuídas estrategicamente entre os cinco membros da equipe[cite: 1]:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-1">Gustavo Coelho[cite: 1]</h3>
+                        <p class="text-sm text-gray-700">Responsável pela Arquitetura Geral do Sistema e integração das interfaces Web/Mobile, garantindo a fluidez da navegação e estrutura do repositório Git.</p>
+                    </div>
+
+                    <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-1">Alex[cite: 1]</h3>
+                        <p class="text-sm text-gray-700">Responsável pelo Desenvolvimento Front-end e implementação de funcionalidades avançadas, como a API de reconhecimento de voz (Speech-to-Text) e manipulação de arquivos de imagem.</p>
+                    </div>
+
+                    <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-1">Carol[cite: 1]</h3>
+                        <p class="text-sm text-gray-700">Responsável pela Documentação Etnobotânica e estruturação do conteúdo de saberes tradicionais das comunidades locais coletados durante a pesquisa.</p>
+                    </div>
+
+                    <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-1">Leonardo Tavares[cite: 1]</h3>
+                        <p class="text-sm text-gray-700">Responsável pela Validação Científica e Farmacêutica, correlacionando os usos populares com artigos e comprovação laboratorial dos fitoterápicos.</p>
+                    </div>
+
+                    <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200 md:col-span-2">
+                        <h3 class="font-bold text-emerald-900 text-lg mb-1">Kaynã[cite: 1]</h3>
+                        <p class="text-sm text-gray-700">Responsável pela Gestão de Dados e Hospedagem (Git/GitHub Pages), configurando o versionamento, testes de usabilidade e publicação online do projeto.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4 -->
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-screwdriver-wrench text-emerald-600"></i> 4. Arquitetura Tecnológica
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong>HTML5 & Tailwind CSS:</strong> Design responsivo e moderno para visualização em múltiplos dispositivos.</li>
+                    <li><strong>JavaScript (ES6+):</strong> Manipulação dinâmica do catálogo e filtragem em tempo real.</li>
+                    <li><strong>Web Speech API:</strong> Facilidade de preenchimento de formulários por comando de voz (ditado).</li>
+                    <li><strong>File API:</strong> Inserção de fotos locais para enriquecer o registro fotográfico das plantas.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm">
+        <p>&copy; 2026 Fitofarma Amazônia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
