@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitofarma Amazônia - Catálogo & App</title>
+    <title>Fitofarma Amazônia - Contato & Parcerias</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,134 +16,65 @@
             </div>
             <nav class="flex space-x-6 font-medium">
                 <a href="index.html" class="hover:text-emerald-300 transition">Início</a>
-                <a href="catalogo.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Catálogo & App</a>
+                <a href="catalogo.html" class="hover:text-emerald-300 transition">Catálogo & App</a>
                 <a href="relatorio.html" class="hover:text-emerald-300 transition">Relatório do Projeto</a>
-                <a href="contato.html" class="hover:text-emerald-300 transition">Contato</a>
+                <a href="contato.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Contato</a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-            <div>
-                <h1 class="text-3xl font-extrabold text-emerald-900">Catálogo Avançado de Plantas Medicinais</h1>
-                <p class="text-gray-600">Espécies nativas da biodiversidade amazônica catalogadas com suporte a voz e upload de fotos.</p>
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-12 w-full">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-emerald-100">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase">Fale Conosco</span>
+                <h1 class="text-3xl font-extrabold text-emerald-900 mt-2">Contato & Parcerias</h1>
+                <p class="text-gray-600 mt-2">É extrativista, pesquisador, laboratório ou parceiro interessado na biodiversidade amazônica? Envie-nos uma mensagem.</p>
             </div>
-            <button onclick="toggleModal(true)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl shadow transition flex items-center gap-2">
-                <i class="fa-solid fa-plus"></i> Cadastrar Nova Planta
-            </button>
-        </div>
 
-        <div class="mb-8">
-            <div class="relative max-w-xl mx-auto">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" id="searchInput" oninput="filterPlants()" placeholder="Busque por nome popular, científico ou uso..." class="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <form onsubmit="handleSubmit(event)" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                        <input type="text" required placeholder="O seu nome" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                        <input type="email" required placeholder="seu@email.com" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Assunto / Perfil</label>
+                    <select class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white">
+                        <option>Parceria com Comunidade / Produtor</option>
+                        <option>Pesquisa Científica / Laboratório</option>
+                        <option>Dúvida sobre o Catálogo</option>
+                        <option>Outros Assuntos</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                    <textarea rows="4" required placeholder="Escreva a sua mensagem aqui..." class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                </button>
+            </form>
+            <div id="successMessage" class="hidden mt-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-center font-medium">
+                Mensagem enviada com sucesso! A equipe entrará em contacto em breve.
             </div>
         </div>
-
-        <div id="plantsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
-    <div id="plantModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl my-8">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold text-emerald-900 flex items-center gap-2"><i class="fa-solid fa-seedling text-emerald-600"></i> Cadastrar Espécie</h3>
-                <button onclick="toggleModal(false)" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-xl"></i></button>
-            </div>
-            <form id="plantForm" onsubmit="savePlant(event)" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1 flex justify-between">Nome Popular: <button type="button" onclick="startDictation('nome')" class="text-emerald-600 text-xs flex items-center gap-1"><i class="fa-solid fa-microphone"></i> Voz</button></label>
-                    <input type="text" id="nome" required class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1 flex justify-between">Nome Científico: <button type="button" onclick="startDictation('cientifico')" class="text-emerald-600 text-xs flex items-center gap-1"><i class="fa-solid fa-microphone"></i> Voz</button></label>
-                    <input type="text" id="cientifico" required class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1 flex justify-between">Uso Tradicional: <button type="button" onclick="startDictation('uso')" class="text-emerald-600 text-xs flex items-center gap-1"><i class="fa-solid fa-microphone"></i> Voz</button></label>
-                    <textarea id="uso" rows="2" required class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1 flex justify-between">Validação Científica: <button type="button" onclick="startDictation('ciencia')" class="text-emerald-600 text-xs flex items-center gap-1"><i class="fa-solid fa-microphone"></i> Voz</button></label>
-                    <textarea id="ciencia" rows="2" required class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Foto da Planta:</label>
-                    <input type="file" id="fotoInput" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-emerald-50 file:text-emerald-700">
-                </div>
-                <div class="flex justify-end gap-3 pt-4 border-t">
-                    <button type="button" onclick="toggleModal(false)" class="px-4 py-2 bg-gray-100 rounded-lg">Cancelar</button>
-                    <button type="submit" class="px-5 py-2 bg-emerald-600 text-white rounded-lg">Salvar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm mt-auto">
+    <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm">
         <p>&copy; 2026 Fitofarma Amazônia.</p>
     </footer>
 
     <script>
-        let plants = [
-            { id: 1, nome: "Copaíba", cientifico: "Copaifera langsdorffii", uso: "Óleo resina cicatrizante e anti-inflamatória aplicada em feridas e inflamações.", ciencia: "Presença marcante de beta-cariofileno com forte ação anti-inflamatória.", foto: "imagens/copaiba.jpg" },
-            { id: 2, nome: "Andiroba", cientifico: "Carapa guianensis", uso: "Uso tópico do óleo para alívio de dores articulares e ação repelente.", ciencia: "Rico em limonóides e andirobina com propriedades analgésicas.", foto: "imagens/andiroba.jpg" },
-            { id: 3, nome: "Unha-de-Gato", cientifico: "Uncaria tomentosa", uso: "Infusão da casca para combate a processos inflamatórios crônicos e imunidade.", ciencia: "Alcalóides oxindólicos auxiliam na modulação do sistema imunológico.", foto: "imagens/unha-de-gato.jpg" },
-            { id: 4, nome: "Açaí", cientifico: "Euterpe oleracea", uso: "Fruto de alto valor energético e uso de raízes em infusões medicinais.", ciencia: "Elevada concentração de antocianinas, poderosos antioxidantes celulares.", foto: "imagens/acai.jpg" },
-            { id: 5, nome: "Jaborandi", cientifico: "Pilocarpus pennatifolius", uso: "Extrato de folhas tradicionalmente usado como tônico capilar.", ciencia: "Contém pilocarpina, alcalóide fundamental na oftalmologia e dermatologia.", foto: "imagens/jaborandi.jpg" },
-            { id: 6, nome: "Uxi-Amarelo", cientifico: "Endopleura uchi", uso: "Casca utilizada em chás para saúde uterina e tratamento de miomas.", ciencia: "Presença de bergenina com atividades anti-inflamatórias uterinas comprovadas.", foto: "imagens/uxi-amarelo.jpg" },
-            { id: 7, nome: "Cumaru", cientifico: "Dipteryx odorata", uso: "Sementes aromáticas usadas em banhos de cheiro e calmante natural.", ciencia: "Presença de cumarina com propriedades antiespasmódicas e aromaterápicas.", foto: "imagens/cumaru.jpg" },
-            { id: 8, nome: "Guaraná", cientifico: "Paullinia cupana", uso: "Sementes trituradas usadas como estimulante físico e mental ancestral.", ciencia: "Teor rico em cafeína, teobromina e taninos revitalizantes.", foto: "imagens/guarana.jpg" }
-        ];
-
-        function renderPlants(list) {
-            const grid = document.getElementById('plantsGrid');
-            grid.innerHTML = '';
-            if (list.length === 0) { grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">Nenhuma planta encontrada.</div>`; return; }
-            list.forEach(p => {
-                grid.innerHTML += `
-                    <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-emerald-100 flex flex-col">
-                        <div class="h-48 bg-gray-200 relative"><img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80'"></div>
-                        <div class="p-6 flex-grow flex flex-col justify-between">
-                            <div>
-                                <h3 class="text-xl font-bold text-emerald-900">${p.nome}</h3>
-                                <p class="text-xs italic text-gray-500 mb-3">${p.cientifico}</p>
-                                <div class="mb-3"><span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Saber Tradicional</span><p class="text-sm text-gray-600 mt-1">${p.uso}</p></div>
-                                <div><span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Pesquisa Científica</span><p class="text-sm text-gray-600 mt-1">${p.ciencia}</p></div>
-                            </div>
-                        </div>
-                    </div>`;
-            });
-        }
-
-        function toggleModal(show) { document.getElementById('plantModal').classList.toggle('hidden', !show); }
-        function filterPlants() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            renderPlants(plants.filter(p => p.nome.toLowerCase().includes(query) || p.cientifico.toLowerCase().includes(query)));
-        }
-        function startDictation(fieldId) {
-            if (!('webkitSpeechRecognition' in window)) { alert('Navegador não suporta voz.'); return; }
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'pt-BR';
-            recognition.onresult = (e) => document.getElementById(fieldId).value = e.results[0][0].transcript;
-            recognition.start();
-        }
-        function savePlant(e) {
+        function handleSubmit(e) {
             e.preventDefault();
-            const nome = document.getElementById('nome').value;
-            const cientifico = document.getElementById('cientifico').value;
-            const uso = document.getElementById('uso').value;
-            const ciencia = document.getElementById('ciencia').value;
-            const fileInput = document.getElementById('fotoInput');
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (ev) => { plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: ev.target.result }); renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset(); };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80' });
-                renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset();
-            }
+            document.getElementById('successMessage').classList.remove('hidden');
+            e.target.reset();
         }
-        renderPlants(plants);
     </script>
 </body>
 </html>
