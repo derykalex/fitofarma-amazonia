@@ -110,7 +110,7 @@
             transform: translateY(-2px);
         }
 
-        /* Seção de Vídeo da Natureza em Loop */
+        /* Seção de Vídeo da Natureza */
         .video-section {
             max-width: 900px;
             margin: 4rem auto;
@@ -227,12 +227,13 @@
         <a href="catalogo.html" class="btn-cta">Explorar Catálogo</a>
     </section>
 
-    <!-- Seção de Vídeo da Natureza em Loop Automático -->
+    <!-- Seção de Vídeo da Natureza -->
     <section class="video-section">
         <h3>A Riqueza da Biodiversidade Amazônica</h3>
         <p>Conheça visualmente os ecossistemas e habitats que abrigam as principais plantas medicinais do nosso projeto.</p>
         <div class="video-container">
-            <video autoplay muted loop playsinline>
+            <!-- Adicionado controls e preload para forçar a leitura e exibição do vídeo -->
+            <video autoplay muted loop playsinline controls preload="auto">
                 <source src="imagens/amazonia-rainforest.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
