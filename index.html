@@ -1,156 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saber Popular | Fitofarma Amazônia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1b4332;
-            --secondary-color: #2d6a4f;
-            --accent-color: #52b788;
-            --light-bg: #f8f9fa;
-            --text-dark: #212529;
-            --text-light: #fdfcdc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--text-light);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .content-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-
-        .content-box h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .content-box p {
-            color: #495057;
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        .quote-box {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <title>Fitofarma Amazónia - Início</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-
-    <header>
-        <h1>🌿 Fitofarma Amazônia</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="saber-popular.html" style="color: var(--accent-color);">Saber Popular</a></li>
-                <li><a href="relatorio.html">Relatório</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+<body class="bg-emerald-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <i class="fa-solid fa-leaf text-3xl text-emerald-300"></i>
+                <span class="text-2xl font-bold tracking-wide">Fitofarma Amazónia</span>
+            </div>
+            <nav class="flex space-x-6 font-medium">
+                <a href="index.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Início</a>
+                <a href="catalogo.html" class="hover:text-emerald-300 transition">Catálogo & App</a>
+                <a href="saber-popular.html" class="hover:text-emerald-300 transition">Saber Popular</a>
+                <a href="relatorio.html" class="hover:text-emerald-300 transition">Relatório do Projeto</a>
+                <a href="contato.html" class="hover:text-emerald-300 transition">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="content-box">
-            <h2>A Conexão entre a Ancestralidade e a Ciência</h2>
-            <p>O projeto <strong>Fitofarma Amazônia</strong> nasce da premissa de que a tecnologia não deve substituir o conhecimento tradicional, mas sim atuar como uma ferramenta de proteção, valorização e difusão desse patrimônio imaterial.</p>
-            <div class="quote-box">
-                "Mapear digitalmente espécies medicinais amazônicas para o fomento à bioeconomia e cadeias de valor locais, conectando a tecnologia ao incentivo à economia sustentável[cite: 2]."
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12 w-full space-y-16">
+        
+        <!-- Secção Hero com Imagem de Fundo Elegante -->
+        <div class="relative rounded-3xl shadow-2xl overflow-hidden bg-emerald-900 text-white p-8 md:p-16 border border-emerald-700">
+            <div class="absolute inset-0 opacity-25 mix-blend-overlay">
+                <img src="imagens/hero-bg.jpg" alt="Biodiversidade Amazónica" class="w-full h-full object-cover">
             </div>
-            <p>As comunidades ribeirinhas, indígenas e quilombolas guardam há séculos os segredos do uso correto das plantas da floresta. O nosso guia interativo propõe uma governança ética onde o saber popular é respeitado, catalogado com consentimento e protegido contra a biopirataria[cite: 2].</p>
+            <div class="max-w-3xl mx-auto text-center relative z-10">
+                <span class="bg-emerald-500/30 text-emerald-200 border border-emerald-400/40 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                    Biodiversidade & Tecnologia
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 mb-6 leading-tight">
+                    Guia Digital Interativo de Plantas Medicinais
+                </h1>
+                <p class="text-lg md:text-xl text-emerald-100 mb-8 leading-relaxed font-light">
+                    Unindo o saber tradicional das comunidades amazónicas de Paragominas e região com pesquisas científicas avançadas, rastreabilidade e valorização da flora local.
+                </p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <a href="catalogo.html" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg transition flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-book-open"></i> Aceder ao Catálogo & App
+                    </a>
+                    <a href="saber-popular.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold px-8 py-3.5 rounded-2xl backdrop-blur-md transition flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-users-line"></i> Saber Popular
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="content-box">
-            <h2>Pilares do Saber Tradicional no Projeto</h2>
-            <p><strong>1. Etnobotânica Participativa:</strong> Registro de relatos de benzedeiros, erveiros e lideranças locais sobre o ciclo de colheita e preparo de fitoterápicos.</p>
-            <p><strong>2. Proteção contra Biopirataria:</strong> Mecanismos de segurança digital que impedem a apropriação indevida de patentes tradicionais por grandes corporações estrangeiras.</p>
-            <p><strong>3. Cadeias de Valor Locais:</strong> Estímulo direto para que as comunidades detentoras do conhecimento participem ativamente dos benefícios econômicos gerados pela bioeconomia[cite: 2].</p>
-        </div>
-    </div>
+        <!-- Pilares do Projeto -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 text-center transform transition hover:-translate-y-1">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-emerald-900 text-xl mb-3">Proteção Contra Biopirataria</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Registo seguro de saberes tradicionais e certificação de origem justa para a comunidade.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 text-center transform transition hover:-translate-y-1">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <h3 class="font-bold text-emerald-900 text-xl mb-3">Tecnologia Acessível</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Cadastro de novas espécies por reconhecimento de voz e envio direto de fotografias.</p>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Fitofarma Amazônia - Bacharelado em Sistemas de Informação (UFRA). Todos os direitos reservados.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-emerald-900/5 border border-emerald-100 text-center transform transition hover:-translate-y-1">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-inner">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="font-bold text-emerald-900 text-xl mb-3">Cadeia Sustentável</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Conexão direta entre produtores locais e o mercado fitoterápico regional e global.</p>
+            </div>
+        </section>
+
+        <!-- Secção de Vídeo da Natureza em Loop Automático -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-emerald-100 text-center">
+            <span class="text-emerald-700 font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">Experiência Visual</span>
+            <h2 class="text-3xl font-bold text-emerald-900 mt-2 mb-2">A Riqueza da Biodiversidade Amazónica</h2>
+            <p class="text-gray-600 text-sm mb-6">Conheça visualmente os ecossistemas que abrigam as principais plantas medicinais do nosso estudo.</p>
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
+                <video autoplay muted loop playsinline controls class="w-full h-full object-cover">
+                    <source src="imagens/amazonia-rainforest.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+        </section>
+
+        <!-- Secção da Equipa -->
+        <section class="bg-emerald-900 text-white rounded-3xl p-10 md:p-12 shadow-xl">
+            <h2 class="text-2xl font-bold text-center mb-8 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-users text-emerald-300"></i> Equipa do Projeto
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="bg-emerald-800/60 p-5 rounded-2xl border border-emerald-700 shadow-md">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">G</div>
+                    <h3 class="font-semibold text-emerald-200">Gustavo</h3>
+                </div>
+                <div class="bg-emerald-800/60 p-5 rounded-2xl border border-emerald-700 shadow-md">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">Al</div>
+                    <h3 class="font-semibold text-emerald-200">Alex</h3>
+                </div>
+                <div class="bg-emerald-800/60 p-5 rounded-2xl border border-emerald-700 shadow-md">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">At</div>
+                    <h3 class="font-semibold text-emerald-200">Atyla</h3>
+                </div>
+                <div class="bg-emerald-800/60 p-5 rounded-2xl border border-emerald-700 shadow-md">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">C</div>
+                    <h3 class="font-semibold text-emerald-200">Carol</h3>
+                </div>
+                <div class="bg-emerald-800/60 p-5 rounded-2xl border border-emerald-700 shadow-md">
+                    <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">K</div>
+                    <h3 class="font-semibold text-emerald-200">Kaynã</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm mt-auto">
+        <p>&copy; 2026 Fitofarma Amazónia. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>
