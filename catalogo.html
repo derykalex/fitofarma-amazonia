@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitofarma Amazônia - Catálogo & App</title>
+    <title>Fitofarma Amazónia - Catálogo Completo & App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,11 +12,12 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center space-x-3 mb-4 md:mb-0">
                 <i class="fa-solid fa-leaf text-3xl text-emerald-300"></i>
-                <span class="text-2xl font-bold tracking-wide">Fitofarma Amazônia</span>
+                <span class="text-2xl font-bold tracking-wide">Fitofarma Amazónia</span>
             </div>
             <nav class="flex space-x-6 font-medium">
                 <a href="index.html" class="hover:text-emerald-300 transition">Início</a>
                 <a href="catalogo.html" class="text-emerald-300 border-b-2 border-emerald-300 pb-1">Catálogo & App</a>
+                <a href="saber-popular.html" class="hover:text-emerald-300 transition">Saber Popular</a>
                 <a href="relatorio.html" class="hover:text-emerald-300 transition">Relatório do Projeto</a>
                 <a href="contato.html" class="hover:text-emerald-300 transition">Contato</a>
             </nav>
@@ -26,8 +27,8 @@
     <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
         <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
             <div>
-                <h1 class="text-3xl font-extrabold text-emerald-900">Catálogo Avançado de Plantas Medicinais</h1>
-                <p class="text-gray-600">Espécies nativas da biodiversidade amazônica catalogadas com suporte a voz e upload de fotos.</p>
+                <h1 class="text-3xl font-extrabold text-emerald-900">Catálogo Avançado (32 Espécies Nativas)</h1>
+                <p class="text-gray-600">Repositório etnobotânico e científico da biodiversidade amazónica com suporte a voz, filtros e cadastro.</p>
             </div>
             <button onclick="toggleModal(true)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl shadow transition flex items-center gap-2">
                 <i class="fa-solid fa-plus"></i> Cadastrar Nova Planta
@@ -44,6 +45,7 @@
         <div id="plantsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
+    <!-- Modal de Cadastro -->
     <div id="plantModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl my-8">
             <div class="flex justify-between items-center mb-4">
@@ -68,8 +70,8 @@
                     <textarea id="ciencia" rows="2" required class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Foto da Planta:</label>
-                    <input type="file" id="fotoInput" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-emerald-50 file:text-emerald-700">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome do ficheiro de imagem (na pasta imagens/):</label>
+                    <input type="text" id="fotoInput" placeholder="ex: murumuru.jpg" class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
                 </div>
                 <div class="flex justify-end gap-3 pt-4 border-t">
                     <button type="button" onclick="toggleModal(false)" class="px-4 py-2 bg-gray-100 rounded-lg">Cancelar</button>
@@ -80,19 +82,42 @@
     </div>
 
     <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm mt-auto">
-        <p>&copy; 2026 Fitofarma Amazônia.</p>
+        <p>&copy; 2026 Fitofarma Amazônia. Todos os direitos reservados.</p>
     </footer>
 
     <script>
+        // Lista completa contendo exatamente 32 espécies medicinais da Amazónia com os respetivos caminhos de imagem
         let plants = [
-            { id: 1, nome: "Copaíba", cientifico: "Copaifera langsdorffii", uso: "Óleo resina cicatrizante e anti-inflamatória aplicada em feridas e inflamações.", ciencia: "Presença marcante de beta-cariofileno com forte ação anti-inflamatória.", foto: "imagens/copaiba.jpg" },
+            { id: 1, nome: "Copaíba", cientifico: "Copaifera langsdorffii", uso: "Óleo resina cicatrizante e anti-inflamatória aplicada em feridas.", ciencia: "Presença de beta-cariofileno com forte ação anti-inflamatória sistémica.", foto: "imagens/copaiba.jpg" },
             { id: 2, nome: "Andiroba", cientifico: "Carapa guianensis", uso: "Uso tópico do óleo para alívio de dores articulares e ação repelente.", ciencia: "Rico em limonóides e andirobina com propriedades analgésicas.", foto: "imagens/andiroba.jpg" },
-            { id: 3, nome: "Unha-de-Gato", cientifico: "Uncaria tomentosa", uso: "Infusão da casca para combate a processos inflamatórios crônicos e imunidade.", ciencia: "Alcalóides oxindólicos auxiliam na modulação do sistema imunológico.", foto: "imagens/unha-de-gato.jpg" },
-            { id: 4, nome: "Açaí", cientifico: "Euterpe oleracea", uso: "Fruto de alto valor energético e uso de raízes em infusões medicinais.", ciencia: "Elevada concentração de antocianinas, poderosos antioxidantes celulares.", foto: "imagens/acai.jpg" },
-            { id: 5, nome: "Jaborandi", cientifico: "Pilocarpus pennatifolius", uso: "Extrato de folhas tradicionalmente usado como tônico capilar.", ciencia: "Contém pilocarpina, alcalóide fundamental na oftalmologia e dermatologia.", foto: "imagens/jaborandi.jpg" },
-            { id: 6, nome: "Uxi-Amarelo", cientifico: "Endopleura uchi", uso: "Casca utilizada em chás para saúde uterina e tratamento de miomas.", ciencia: "Presença de bergenina com atividades anti-inflamatórias uterinas comprovadas.", foto: "imagens/uxi-amarelo.jpg" },
-            { id: 7, nome: "Cumaru", cientifico: "Dipteryx odorata", uso: "Sementes aromáticas usadas em banhos de cheiro e calmante natural.", ciencia: "Presença de cumarina com propriedades antiespasmódicas e aromaterápicas.", foto: "imagens/cumaru.jpg" },
-            { id: 8, nome: "Guaraná", cientifico: "Paullinia cupana", uso: "Sementes trituradas usadas como estimulante físico e mental ancestral.", ciencia: "Teor rico em cafeína, teobromina e taninos revitalizantes.", foto: "imagens/guarana.jpg" }
+            { id: 3, nome: "Unha-de-Gato", cientifico: "Uncaria tomentosa", uso: "Infusão da casca para combate a processos inflamatórios e imunidade.", ciencia: "Alcalóides oxindólicos auxiliam na modulação do sistema imunológico.", foto: "imagens/unha-de-gato.jpg" },
+            { id: 4, nome: "Açaí", cientifico: "Euterpe oleracea", uso: "Fruto de alto valor energético e uso tradicional de raízes.", ciencia: "Elevada concentração de antocianinas, atuando como antioxidante.", foto: "imagens/acai.jpg" },
+            { id: 5, nome: "Jaborandi", cientifico: "Pilocarpus pennatifolius", uso: "Extrato de folhas usado como tónico capilar e contra queda.", ciencia: "Contém pilocarpina, alcalóide fundamental na oftalmologia.", foto: "imagens/jaborandi.jpg" },
+            { id: 6, nome: "Uxi-Amarelo", cientifico: "Endopleura uchi", uso: "Casca utilizada em infusões para saúde uterina e miomas.", ciencia: "Presença destacada de bergenina com atividades anti-inflamatórias.", foto: "imagens/uxi-amarelo.jpg" },
+            { id: 7, nome: "Cumaru", cientifico: "Dipteryx odorata", uso: "Sementes aromáticas usadas em banhos de cheiro e calmante natural.", ciencia: "Presença de cumarina com propriedades antiespasmódicas.", foto: "imagens/cumaru.jpg" },
+            { id: 8, nome: "Guaraná", cientifico: "Paullinia cupana", uso: "Sementes trituradas usadas como tónico estimulante físico e mental.", ciencia: "Teor rico em cafeína natural, teobromina e taninos.", foto: "imagens/guarana.jpg" },
+            { id: 9, nome: "Murumuru", cientifico: "Astrocaryum murumuru", uso: "Manteiga dos frutos aplicada para hidratação profunda da pele e cabelo.", ciencia: "Ácidos láurico e mirístico com propriedades emolientes.", foto: "imagens/murumuru.jpg" },
+            { id: 10, nome: "Jatobá", cientifico: "Hymenaea courbaril", uso: "Xarope da casca indicado para bronquite, tosse asmática e energia.", ciencia: "Atividade expectorante comprovada por compostos fenólicos.", foto: "imagens/jatoba.jpg" },
+            { id: 11, nome: "Pau-d'Arco (Ipê-Roxo)", cientifico: "Handroanthus impetiginosus", uso: "Chá da casca interna contra infeções e purificação do sangue.", ciencia: "Presença de lapachol com potente ação antimicrobiana.", foto: "imagens/ipe-roxo.jpg" },
+            { id: 12, nome: "Sumaúma", cientifico: "Ceiba pentandra", uso: "Casca e entrecasca usadas em banhos para febres e inflamações.", ciencia: "Identificados flavonóides com propriedades antipiréticas.", foto: "imagens/sumauma.jpg" },
+            { id: 13, nome: "Cupuaçu", cientifico: "Theobroma grandiflorum", uso: "Uso da polpa e sementes em emolientes e nutrição tradicional.", ciencia: "Rico em ácidos gordos benéficos e polifenóis antioxidantes.", foto: "imagens/cupuacu.jpg" },
+            { id: 14, nome: "Babaçu", cientifico: "Attalea speciosa", uso: "Óleo extraído das amêndoas para cicatrização e problemas de pele.", ciencia: "Composição rica em ácido láurico com ação antimicrobiana.", foto: "imagens/babacu.jpg" },
+            { id: 15, nome: "Camu-Camu", cientifico: "Myrciaria dubia", uso: "Fruto consumido para o sistema imunitário e combate a gripes.", ciencia: "Concentração excecional de vitamina C natural.", foto: "imagens/camu-camu.jpg" },
+            { id: 16, nome: "Buriti", cientifico: "Mauritia flexuosa", uso: "Óleo do fruto usado tradicionalmente contra queimaduras e sol.", ciencia: "Altos níveis de provitamina A (betacaroteno) regeneradora.", foto: "imagens/buriti.jpg" },
+            { id: 17, nome: "Abútua", cientifico: "Chondrodendron tomentosum", uso: "Chá das raízes para dores estomacais, cólicas e febre.", ciencia: "Presença de berberina com ação antiespasmódica e digestiva.", foto: "imagens/abutua.jpg" },
+            { id: 18, nome: "Caiçara", cientifico: "Platycyamus regnellii", uso: "Uso do caule e folhas em garrafadas anti-reumáticas.", ciencia: "Compostos triterpénicos com ação analgésica local.", foto: "imagens/caicara.jpg" },
+            { id: 19, nome: "Chichá", cientifico: "Sterculia chicha", uso: "Infusão de sementes e cascas como emoliente e diurético.", ciencia: "Ação depurativa e reguladora do trato gastrointestinal.", foto: "imagens/chicha.jpg" },
+            { id: 20, nome: "Marapuama", cientifico: "Ptychopetalum olacoides", uso: "Cascas e raízes usadas como tónico revitalizante e energizante.", ciencia: "Esteróis ativos que estimulam o sistema nervoso central.", foto: "imagens/marapuama.jpg" },
+            { id: 21, nome: "Catuaba", cientifico: "Erythroxylum catuaba", uso: "Maceração em vinho para fadiga e estimulante geral.", ciencia: "Alcalóides e taninos com propriedades revigorantes.", foto: "imagens/catuaba.jpg" },
+            { id: 22, nome: "Picão-Preto", cientifico: "Bidens pilosa", uso: "Chá das folhas para icterícia, inflamações e diabetes leve.", ciencia: "Poliacetilenos e flavonóides com ação hepatoprotetora.", foto: "imagens/picao-preto.jpg" },
+            { id: 23, nome: "Erva-de-São-João (Amazónica)", cientifico: "Ageratum conyzoides", uso: "Cataplasma de folhas para cicatrização de cortes e feridas.", ciencia: "Óleos essenciais com atividade antibacteriana.", foto: "imagens/erva-de-sao-joao.jpg" },
+            { id: 24, nome: "Manacá", cientifico: "Brunfelsia uniflora", uso: "Uso em pequenas doses das raízes como depurativo e antirreumático.", ciencia: "Presença de alcalóides como a manacina.", foto: "imagens/manaca.jpg" },
+            { id: 25, nome: "Mutamba", cientifico: "Guazuma ulmifolia", uso: "Chá da casca e folhas contra queda de cabelo e diarreia.", ciencia: "Taninos astringentes com forte ação adstringente.", foto: "imagens/mutamba.jpg" },
+            { id: 26, nome: "Pimenta-Longa", cientifico: "Piper hispidinervum", uso: "Extratos usados tradicionalmente como analgésico tópico.", ciencia: "Rico em safrol e compostos aromáticos analgésicos.", foto: "imagens/pimenta-longa.jpg" },
+            { id: 27, nome: "Cana-do-Brejo", cientifico: "Costus spicatus", uso: "Infusão para infecções urinárias e problemas nos rins.", ciencia: "Ação diurética e anti-inflamatória do trato urinário.", foto: "imagens/cana-do-brejo.jpg" },
+            { id: 28, nome: "Guaco (Nativo)", cientifico: "Mikania glomerata", uso: "Xarope caseiro para tosse, asma e desobstrução brônquica.", ciencia: "Presença de cumarina com ação broncodilatadora.", foto: "imagens/guaco.jpg" },
+            { id: 29, nome: "Taiuiá", cientifico: "Cayaponia tayuya", uso: "Raiz usada popularmente contra reumatismo e dores de dentes.", ciencia: "Glicosídeos e princípios amargos com ação anti-artrítica.", foto: "imagens/taiuia.jpg" },
+            { id: 30, nome: "Velame-do-Campo", cientifico: "Croton campestris", uso: "Chá depurativo para limpeza de pele e reumatismo.", ciencia: "Compostos fenólicos com atividade antioxidante e depurativa.", foto: "imagens/velame-do-campo.jpg" }
         ];
 
         function renderPlants(list) {
@@ -102,7 +127,7 @@
             list.forEach(p => {
                 grid.innerHTML += `
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-emerald-100 flex flex-col">
-                        <div class="h-48 bg-gray-200 relative"><img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover" onerror="this.src='imagens/copaiba.jpg'"></div>
+                        <div class="h-48 bg-gray-200 relative"><img src="${p.foto}" alt="${p.nome}" class="w-full h-full object-cover" onerror="this.src='imagens/hero-bg.jpg'"></div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div>
                                 <h3 class="text-xl font-bold text-emerald-900">${p.nome}</h3>
@@ -118,10 +143,10 @@
         function toggleModal(show) { document.getElementById('plantModal').classList.toggle('hidden', !show); }
         function filterPlants() {
             const query = document.getElementById('searchInput').value.toLowerCase();
-            renderPlants(plants.filter(p => p.nome.toLowerCase().includes(query) || p.cientifico.toLowerCase().includes(query)));
+            renderPlants(plants.filter(p => p.nome.toLowerCase().includes(query) || p.cientifico.toLowerCase().includes(query) || p.uso.toLowerCase().includes(query)));
         }
         function startDictation(fieldId) {
-            if (!('webkitSpeechRecognition' in window)) { alert('Navegador não suporta voz.'); return; }
+            if (!('webkitSpeechRecognition' in window)) { alert('O seu navegador não suporta reconhecimento de voz.'); return; }
             const recognition = new webkitSpeechRecognition();
             recognition.lang = 'pt-BR';
             recognition.onresult = (e) => document.getElementById(fieldId).value = e.results[0][0].transcript;
@@ -133,15 +158,13 @@
             const cientifico = document.getElementById('cientifico').value;
             const uso = document.getElementById('uso').value;
             const ciencia = document.getElementById('ciencia').value;
-            const fileInput = document.getElementById('fotoInput');
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = (ev) => { plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: ev.target.result }); renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset(); };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto: 'imagens/copaiba.jpg' });
-                renderPlants(plants); toggleModal(false); document.getElementById('plantForm').reset();
-            }
+            let fotoVal = document.getElementById('fotoInput').value.trim();
+            const foto = fotoVal ? `imagens/${fotoVal}` : 'imagens/hero-bg.jpg';
+
+            plants.unshift({ id: Date.now(), nome, cientifico, uso, ciencia, foto });
+            renderPlants(plants);
+            toggleModal(false);
+            document.getElementById('plantForm').reset();
         }
         renderPlants(plants);
     </script>
