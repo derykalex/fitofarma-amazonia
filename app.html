@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitofarma Amazónia - App Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-emerald-950 text-gray-800 font-sans min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Contentor com formato de Smartphone -->
+    <div class="w-full max-w-sm bg-emerald-50 rounded-[40px] shadow-2xl border-8 border-emerald-900 overflow-hidden flex flex-col h-[800px] relative">
+        
+        <!-- Barra de Estado do Telemóvel -->
+        <div class="bg-emerald-900 text-white px-6 py-3 flex justify-between items-center text-xs font-semibold">
+            <span>09:41</span>
+            <div class="flex space-x-2">
+                <i class="fa-solid fa-signal"></i>
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-full"></i>
+            </div>
+        </div>
+
+        <!-- Cabeçalho da App -->
+        <div class="bg-emerald-800 text-white p-4 text-center shadow-md">
+            <h1 class="text-lg font-bold flex items-center justify-center gap-2">
+                <i class="fa-solid fa-camera text-emerald-300"></i> Fitofarma Scanner
+            </h1>
+            <p class="text-xs text-emerald-200">Identificação botânica estilo Pl@ntNet</p>
+        </div>
+
+        <!-- Ecrã Principal da App -->
+        <div class="flex-grow p-4 overflow-y-auto space-y-4">
+            
+            <!-- Caixa de Captura / Upload da Foto -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-dashed border-emerald-300 text-center flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-50/50 transition" onclick="document.getElementById('cameraInput').click()">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mb-3 shadow-inner">
+                    <i class="fa-solid fa-camera-retro"></i>
+                </div>
+                <h3 class="font-bold text-emerald-900 text-sm">Fotografar ou Carregar Planta</h3>
+                <p class="text-xs text-gray-500 mt-1">Clique para selecionar uma foto da folha, casca ou fruto</p>
+                <input type="file" id="cameraInput" accept="image/*" class="hidden" onchange="simulateIdentification(event)">
+            </div>
+
+            <!-- Área de Pré-visualização e Resultado da IA -->
+            <div id="resultArea" class="hidden bg-white rounded-2xl p-5 shadow-md border border-emerald-100 space-y-3">
+                <div class="h-40 rounded-xl overflow-hidden bg-gray-100 relative">
+                    <img id="previewImg" src="" alt="Planta Fotografada" class="w-full h-full object-cover">
+                    <span class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-2 py-1 rounded-full">98.4% Probabilidade</span>
+                </div>
+                <div>
+                    <h4 id="resName" class="text-lg font-bold text-emerald-900">Copaíba</h4>
+                    <p id="resScientific" class="text-xs italic text-gray-500">Copaifera langsdorffii</p>
+                </div>
+                <div class="text-xs space-y-1">
+                    <p class="text-emerald-800 font-semibold"><i class="fa-solid fa-seedling"></i> Saber Tradicional:</p>
+                    <p id="resTrad" class="text-gray-600">Óleo resina cicatrizante aplicada em feridas.</p>
+                </div>
+                <div class="text-xs space-y-1">
+                    <p class="text-blue-800 font-semibold"><i class="fa-solid fa-flask"></i> Validação Científica:</p>
+                    <p id="resSci" class="text-gray-600">Beta-cariofileno com ação anti-inflamatória.</p>
+                </div>
+            </div>
+
+            <!-- Dicas Rápidas -->
+            <div class="bg-emerald-100/60 p-4 rounded-2xl border border-emerald-200">
+                <h4 class="font-bold text-emerald-900 text-xs mb-1"><i class="fa-solid fa-lightbulb text-amber-600"></i> Dica de Captura:</h4>
+                <p class="text-xs text-gray-700">Para obter melhores resultados com a inteligência artificial, fotografe a folha bem iluminada contra um fundo neutro.</p>
+            </div>
+
+        </div>
+
+        <!-- Barra de Navegação Inferior do Telemóvel -->
+        <div class="bg-white border-t border-gray-200 py-3 px-6 flex justify-around text-gray-500 text-sm">
+            <a href="index.html" class="flex flex-col items-center hover:text-emerald-700"><i class="fa-solid fa-home text-lg"></i><span class="text-[10px]">Início</span></a>
+            <a href="catalogo.html" class="flex flex-col items-center hover:text-emerald-700"><i class="fa-solid fa-book text-lg"></i><span class="text-[10px]">Catálogo</span></a>
+            <a href="app.html" class="flex flex-col items-center text-emerald-700 font-bold"><i class="fa-solid fa-camera text-lg"></i><span class="text-[10px]">Scanner</span></a>
+            <a href="saber-popular.html" class="flex flex-col items-center hover:text-emerald-700"><i class="fa-solid fa-users text-lg"></i><span class="text-[10px]">Saberes</span></a>
+        </div>
+
+    </div>
+
+    <!-- Botão de Voltar ao Site Principal -->
+    <div class="mt-4 text-center">
+        <a href="index.html" class="text-emerald-300 hover:underline text-sm font-medium"><i class="fa-solid fa-arrow-left"></i> Voltar ao Website Principal</a>
+    </div>
+
+    <script>
+        function simulateIdentification(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(ev) {
+                    document.getElementById('previewImg').src = ev.target.result;
+                    document.getElementById('resultArea').classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
