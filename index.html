@@ -81,16 +81,55 @@
             </div>
         </section>
 
-        <!-- Secção de Vídeo -->
-        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-emerald-100 text-center">
-            <span class="text-emerald-700 font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">Experiência Visual</span>
-            <h2 class="text-3xl font-bold text-emerald-900 mt-2 mb-2">A Riqueza da Biodiversidade Amazónica</h2>
-            <p class="text-gray-600 text-sm mb-6">Conheça visualmente os ecossistemas que abrigam as principais plantas medicinais do nosso estudo.</p>
-            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
-                <video autoplay muted loop playsinline controls class="w-full h-full object-cover">
+        <!-- Galeria de Vídeos Interativa da Biodiversidade -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-emerald-100">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-emerald-700 font-semibold text-xs uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full">Galeria Audiovisual</span>
+                <h2 class="text-3xl font-bold text-emerald-900 mt-2 mb-2">Ecossistemas, Fauna e Flora da Amazónia</h2>
+                <p class="text-gray-600 text-sm">Selecione abaixo diferentes perspetivas visuais da floresta, animais e rios que moldam o nosso projeto de fitoterapia.</p>
+            </div>
+
+            <!-- Vídeo Principal com Loop e Controlos Ativos -->
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black mb-6">
+                <video id="mainVideo" controls autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
                     <source src="imagens/amazonia-rainforest.mp4" type="video/mp4">
-                    Seu navegador não suporta a tag de vídeo.
+                    O seu navegador não suporta a tag de vídeo.
                 </video>
+            </div>
+
+            <!-- Seletor de Vídeos (Galeria Dinâmica) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <button onclick="changeVideo('imagens/amazonia-rainforest.mp4')" class="p-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-2xl text-left transition flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition"><i class="fa-solid fa-tree"></i></div>
+                    <div>
+                        <h4 class="font-bold text-emerald-900 text-sm">Copa da Floresta</h4>
+                        <p class="text-xs text-gray-500">Dossel e aéreo</p>
+                    </div>
+                </button>
+
+                <button onclick="changeVideo('imagens/amazonia-fauna.mp4')" class="p-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-2xl text-left transition flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition"><i class="fa-solid fa-paw"></i></div>
+                    <div>
+                        <h4 class="font-bold text-emerald-900 text-sm">Fauna & Araras</h4>
+                        <p class="text-xs text-gray-500">Animais e aves</p>
+                    </div>
+                </button>
+
+                <button onclick="changeVideo('imagens/amazonia-rios.mp4')" class="p-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-2xl text-left transition flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition"><i class="fa-solid fa-water"></i></div>
+                    <div>
+                        <h4 class="font-bold text-emerald-900 text-sm">Rios e Margens</h4>
+                        <p class="text-xs text-gray-500">Hidrografia</p>
+                    </div>
+                </button>
+
+                <button onclick="changeVideo('imagens/amazonia-flora.mp4')" class="p-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-2xl text-left transition flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition"><i class="fa-solid fa-seedling"></i></div>
+                    <div>
+                        <h4 class="font-bold text-emerald-900 text-sm">Flora Medicinal</h4>
+                        <p class="text-xs text-gray-500">Plantas nativas</p>
+                    </div>
+                </button>
             </div>
         </section>
 
@@ -129,5 +168,17 @@
     <footer class="bg-emerald-950 text-emerald-400 py-6 text-center text-sm mt-auto">
         <p>&copy; 2026 Fitofarma Amazónia. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script para alternar e reproduzir em loop os vídeos -->
+    <script>
+        function changeVideo(videoSrc) {
+            const videoPlayer = document.getElementById('mainVideo');
+            videoPlayer.src = videoSrc;
+            videoPlayer.load();
+            videoPlayer.play().catch(error => {
+                console.log("Reprodução automática restrita pelo navegador. Utilize os controlos manuais.");
+            });
+        }
+    </script>
 </body>
 </html>
